@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { PokeApiModule } from './poke-api/poke-api.module';
 
 @Module({
-  imports: [],
+  imports: [PokeApiModule],
   controllers: [],
   providers: [],
   exports: [],
