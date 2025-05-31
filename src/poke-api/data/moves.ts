@@ -638,7 +638,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { failencore: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1 },
 		onHit(target) {
-			const moves = [];
+			const moves: string[] = [];
 			for (const pokemon of target.side.pokemon) {
 				if (pokemon === target) continue;
 				for (const moveSlot of pokemon.moveSlots) {
@@ -2922,7 +2922,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (!target.lastMoveUsed) {
 				return false;
 			}
-			const possibleTypes = [];
+			const possibleTypes: string[] = [];
 			const attackType = target.lastMoveUsed.type;
 			for (const typeName of this.dex.types.names()) {
 				if (source.hasType(typeName)) continue;
@@ -17541,7 +17541,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return source.status === 'slp' || source.hasAbility('comatose');
 		},
 		onHit(pokemon) {
-			const moves = [];
+			const moves: string[] = [];
 			for (const moveSlot of pokemon.moveSlots) {
 				const moveid = moveSlot.id;
 				if (!moveid) continue;
