@@ -33,6 +33,9 @@ export class PokeApiService {
       logs.push(chunk);
     }
 
-    return logs;
+    return logs
+      .flatMap(chunk => chunk.split('\n'))
+      .filter(line => line.trim().length > 0);
+
   }
 }

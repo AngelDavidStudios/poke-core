@@ -17,5 +17,9 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src/**/*",
+    "src/poke-api/data/random-battles/gen8/data.json"
+  ]
 }
