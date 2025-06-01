@@ -3,11 +3,11 @@ import { PokeApiService } from './poke-api.service';
 
 @Controller('poke-api')
 export class PokeApiController {
+  constructor(private readonly pokeApiService: PokeApiService) {}
 
-  constructor(private readonly pokemonService: PokeApiService ) {}
-
-  @Get()
-  getAllPokemon() {
-    return this.pokemonService.findAll()
+  @Get('simulate')
+  async simulateBattle() {
+    const log = await this.pokeApiService.simulateBattle();
+    return { log };
   }
 }
